@@ -1,0 +1,31 @@
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ProtectionPlan
+metadata:
+  name: pacman-protectionplan
+  namespace: pacman
+spec:
+  scheduleName: hour-local-schedule
+  retentionPolicy:
+    retentionCount: 5
+  replicationConfigs:
+    - replicationTargetName: repln-target-dkp
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ReplicationTarget
+metadata:
+  name: repln-target-dkp
+  namespace: pacman
+spec:
+  namespaceName: pacman
+  remoteName: remote-dkp
+  serviceAccountName: default
+---
+apiVersion: scheduler.nutanix.com/v1alpha1
+kind: JobScheduler
+metadata:
+  name: hour-local-schedule
+  namespace: pacman
+spec:
+  interval:
+    minutes: 60
+  timeZoneName: "Europe/Paris"
