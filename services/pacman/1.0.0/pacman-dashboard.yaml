@@ -8,6 +8,6 @@ metadata:
 data:
   name: "pacman"
   #dashboardLink: "https://pacman.principal.nkp-next.nxlab.fr"
-  dashboardLink: "10.38.174.42"
+  dashboardLink: "https://pacman.cna-demo.com"
   docsLink: "nodocs"
   version: "1.0.0"
