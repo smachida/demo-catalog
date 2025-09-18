@@ -28,4 +28,4 @@ metadata:
 spec:
   interval:
     minutes: 60
-  timeZoneName: "Europe/Paris"
+  timeZoneName: "Asia/Tokyo"
