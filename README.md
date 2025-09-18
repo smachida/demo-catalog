@@ -16,5 +16,5 @@ spec:
   ref:
     branch: main
   timeout: 1m0s
-  url: https://github.com/tuxtof/demo-catalog.git
+  url: https://github.com/smachida/demo-catalog.git
 ```
