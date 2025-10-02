@@ -4,28 +4,28 @@ metadata:
   name: pacman-protectionplan
   namespace: pacman
 spec:
-  scheduleName: hour-local-schedule
+  scheduleName: minute-local-schedule
   retentionPolicy:
-    retentionCount: 5
+    retentionCount: 10
   replicationConfigs:
-    - replicationTargetName: repln-target-dkp
+    - replicationTargetName: replication-target-tokyo-east-2
 ---
 apiVersion: dataservices.nutanix.com/v1alpha1
 kind: ReplicationTarget
 metadata:
-  name: repln-target-dkp
+  name: replication-target-tokyo-east-2
   namespace: pacman
 spec:
   namespaceName: pacman
-  remoteName: remote-dkp
+  remoteName: remote-tokyo-east-2
   serviceAccountName: default
 ---
 apiVersion: scheduler.nutanix.com/v1alpha1
 kind: JobScheduler
 metadata:
-  name: hour-local-schedule
+  name: minute-local-schedule
   namespace: pacman
 spec:
   interval:
-    minutes: 60
+    minutes: 5
   timeZoneName: "Asia/Tokyo"
